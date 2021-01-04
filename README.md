@@ -3,7 +3,7 @@ CLI tool to build a simple CouchDb for Pokemon. Data source: https://github.com/
 
 ## Requirements
 - Setup database by following https://github.com/PokeAPI/pokeapi
-- Install CouchDb
+- Install CouchDb and setup local db at http://localhost:5984/_utils/
 - Register to Cloudant and create a database (this is the remote database)
 
 ## How to run
