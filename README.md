@@ -1,6 +1,11 @@
 # pokemon-db
 CLI tool to build a simple CouchDb for Pokemon. Data source: https://github.com/PokeAPI/pokeapi
 
+## Purpose
+### Why CouchDb and not other popular NoSql database or even SQL?
+- To store structured data on the frontend, I have to use IndexedDb API. IndexedDb is very low-level so there are multiple libraries that simplify the API. One of them is PouchDb which conveniently fits my need. PouchDb can query from local IndexedDb, furthermore, it has a fallback mechanism where if the document doesn't exist locally, it can fetch the document from a remote database. This leads me toward Cloudant, which services CouchDb and has a free tier.
+- Pokemon data are static and readonly, it can simply exist as JSON objects so SQL is not necessary.
+
 ## Note
 PokeApi evolution chain data does not handle alternate forms very well (missing alolan and incorrect relationship between default form and region specific evolved form).
 I patched this by manually creating the correct jsons for pokemons with galar or alolan forms. You can find the jsons in `fix/evolutions/`. This patch can be removed once PokeApi fixes their data.
